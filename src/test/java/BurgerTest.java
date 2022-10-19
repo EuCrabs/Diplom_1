@@ -9,12 +9,12 @@ import static org.junit.Assert.assertEquals;
 
 public class BurgerTest extends BaseTest {
     Burger burger;
-    private final String BUN_NAME = "Краторная булка N-200i";
-    private final float BUN_PRICE = 1255F;
+    private final String bunName = "Краторная булка N-200i";
+    private final float bunPrice = 1255F;
 
     @Before
     public void init() {
-        bun = new Bun(BUN_NAME, BUN_PRICE);
+        bun = new Bun(bunName, bunPrice);
         burger = new Burger();
         burger.setBuns(bun);
 
@@ -72,7 +72,7 @@ public class BurgerTest extends BaseTest {
         burger.addIngredient(secondIngredient);
         burger.addIngredient(thirdIngredient);
 
-        float expectedPrice = BUN_PRICE * 2 + ingredient.getPrice() + secondIngredient.getPrice() + thirdIngredient.getPrice();
+        float expectedPrice = bunPrice * 2 + ingredient.getPrice() + secondIngredient.getPrice() + thirdIngredient.getPrice();
 
         assertEquals(expectedPrice, burger.getPrice(), 0);
     }
@@ -84,11 +84,11 @@ public class BurgerTest extends BaseTest {
         burger.addIngredient(secondIngredient);
         burger.addIngredient(thirdIngredient);
 
-        String result = "(==== " + BUN_NAME + " ====)\r\n" +
+        String result = "(==== " + bunName + " ====)\r\n" +
                 "= filling " + burger.ingredients.get(0).getName() + " =\r\n" +
                 "= sauce " + burger.ingredients.get(1).getName() + " =\r\n" +
                 "= filling " + burger.ingredients.get(2).getName() + " =\r\n" +
-                "(==== " + BUN_NAME + " ====)\r\n" +
+                "(==== " + bunName + " ====)\r\n" +
                 "\r\n" +
                 "Price: " + String.format("%.6f", burger.getPrice()) + "\r\n";
 

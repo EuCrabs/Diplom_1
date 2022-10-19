@@ -8,14 +8,14 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class IngredientTest extends BaseTest {
-    private final IngredientType INGREDIENT_TYPE;
-    private final String INGREDIENT_NAME ;
-    private final float INGREDIENT_PRICE;
+    private final IngredientType ingredientType;
+    private final String ingredientName;
+    private final float ingredientPrice;
 
-    public IngredientTest(IngredientType INGREDIENT_TYPE, String INGREDIENT_NAME, float INGREDIENT_PRICE) {
-        this.INGREDIENT_TYPE = INGREDIENT_TYPE;
-        this.INGREDIENT_NAME = INGREDIENT_NAME;
-        this.INGREDIENT_PRICE = INGREDIENT_PRICE;
+    public IngredientTest(IngredientType ingredientType, String ingredientName, float ingredientPrice) {
+        this.ingredientType = ingredientType;
+        this.ingredientName = ingredientName;
+        this.ingredientPrice = ingredientPrice;
     }
 
     @Parameterized.Parameters
@@ -28,19 +28,19 @@ public class IngredientTest extends BaseTest {
 
     @Test
     public void getIngredientType() {
-        ingredient = new Ingredient(INGREDIENT_TYPE, INGREDIENT_NAME, INGREDIENT_PRICE);
-        assertEquals(INGREDIENT_TYPE, ingredient.getType());
+        ingredient = new Ingredient(ingredientType, ingredientName, ingredientPrice);
+        assertEquals(ingredientType, ingredient.getType());
     }
 
     @Test
     public void getIngredientName() {
-        ingredient = new Ingredient(INGREDIENT_TYPE, INGREDIENT_NAME, INGREDIENT_PRICE);
-        assertEquals(INGREDIENT_NAME, ingredient.getName());
+        ingredient = new Ingredient(ingredientType, ingredientName, ingredientPrice);
+        assertEquals(ingredientName, ingredient.getName());
     }
 
     @Test
     public void getIngredientPrice() {
-        ingredient = new Ingredient(INGREDIENT_TYPE, INGREDIENT_NAME, INGREDIENT_PRICE);
-        assertEquals(INGREDIENT_PRICE, ingredient.getPrice(), 0);
+        ingredient = new Ingredient(ingredientType, ingredientName, ingredientPrice);
+        assertEquals(ingredientPrice, ingredient.getPrice(), 0);
     }
 }
